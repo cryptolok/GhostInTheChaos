@@ -1,0 +1,38 @@
+#~/.ssh/config
+#	share keys with cert && cat id_ed25519.pub >> ~/.ssh/authorized_keys && chmod -R 700 .ssh
+
+Host vpn
+	Hostname 127.0.0.1
+	Port 7443
+        IdentityFile ~/.ssh/id_ed25519
+        User root
+#	HostKeyAlgorithms ssh-ed25519
+#	Ciphers chacha20-poly1305@openssh.com
+#	Ciphers aes256-gcm@openssh.com
+#	MACs umac-128@openssh.com
+#	Tunnel point-to-point
+	ConnectTimeout 10
+##	ProxyCommand corkscrew $PROXY $PORT %h %p
+	ForwardX11 yes
+	DynamicForward 8081
+
+Host chaos
+	Hostname 127.0.0.1
+        Port 8080
+        User root
+	IdentityFile ~/.ssh/id_ed25519
+#	Tunnel point-to-point
+	ProxyCommand ssh vpn -W %h:%p
+        ForwardX11 yes
+#	BindAddress 8080
+	DynamicForward 8082
+
+Host lvpn
+	Hostname 10.11.13.1
+	Port 22
+	IdentityFile ~/.ssh/id_ed25519.vps
+	User root
+	ConnectTimeout 10
+	ForwardX11 yes
+	DynamicForward 8083
+
