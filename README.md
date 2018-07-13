@@ -1,7 +1,7 @@
 # GhostInTheChaos
 Chaotic Crypto Stealth VPN for Anonymity and Untraceable Hacking Attacks with Linux and Android
 
-[](https://github.com/cryptolok/GhostInTheChaos/raw/master/logo.jpg =448x298)
+[](https://github.com/cryptolok/GhostInTheChaos/raw/master/logo.jpg)
 
 Properties:
 * Protects client from sniffing and tracing
@@ -28,7 +28,7 @@ Limitations:
 
 See my [blog](https://cryptolok.blogspot.com/2018/07/ghostinthechaos-chaotic-crypto-stealth-vpn-for-anonymity.html) for research details.
 
-[](https://github.com/cryptolok/GhostInTheChaos/raw/master/schema.png)
+[ ](https://github.com/cryptolok/GhostInTheChaos/raw/master/schema.png)
 
 ### HowTo
 
