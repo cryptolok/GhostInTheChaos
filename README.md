@@ -84,7 +84,7 @@ apt install openssh-server iptables-persistent
 
 ! WARNING ! this server shouldn't be accessed directly, in order to leave no trace (free WiFi or Tor), this is the "bulletproof" server.
 
-For I2P, you should manually [install/download](https://geti2p.net/en/download/) it both for CHAOS server and VPN server. Don't forget to make sure that it's daemonized:
+For I2P, you should manually [install/download](https://geti2p.net/en/download) it both for CHAOS server and VPN server. Don't forget to make sure that it's daemonized:
 ```bash
 systemctl enable i2p || echo "@reboot /usr/bin/i2prouter" >> /var/spool/cron/crontab/root
 ```
