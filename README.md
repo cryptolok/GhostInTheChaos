@@ -26,7 +26,7 @@ Limitations:
 
 ## How it works & Analysis
 
-See my [blog](https://cryptolok.blogspot.com/2018/07/ghostinthechaos-chaotic-crypto-stealth-vpn-for-anonymity.html) for research details.
+See my [blog](https://cryptolok.blogspot.com/2018/07/ghostinthechaos-chaotic-crypto-stealth.html) for research details.
 
 ![](https://github.com/cryptolok/GhostInTheChaos/raw/master/schema.png)
 
