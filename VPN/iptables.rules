@@ -1,0 +1,24 @@
+#/etc/iptables/rules.v4
+#apt install iptables-persistent
+*filter
+#:INPUT ACCEPT [0:0]
+#:FORWARD ACCEPT [0:0]
+#:OUTPUT ACCEPT [307558:46722814]
+#-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i tun0 -j ACCEPT
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+#-A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
+#-A INPUT -i eth0 -p tcp --dport 8080 -j ACCEPT
+#-A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
+-A INPUT -j DROP
+COMMIT
+# TODO enable UDP over IPv4/IPv6 for more stealthing and traffic analysis prevention?
+
+#/etc/iptables/rules.v6
+*filter
+-A INPUT -j DROP
+-A FORWARD -j DROP
+COMMIT
