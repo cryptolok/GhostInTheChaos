@@ -1,0 +1,22 @@
+#/etc/iptables/rules.v4
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [2590:1545351]
+
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i tun0 -j ACCEPT
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i eth0 -p udp -j ACCEPT
+#-A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
+-A INPUT -j DROP
+COMMIT
+#/etc/iptables/rules.v6
+*filter
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i eth0 -p udp -j ACCEPT
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -j DROP
+-A FORWARD -j DROP
+COMMIT
+
