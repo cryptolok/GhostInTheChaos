@@ -1,0 +1,9 @@
+#!/bin/bash
+#crontab @reboot
+#apt install socat
+
+while true
+do
+	socat openssl-listen:4433,reuseaddr,cert=cert.pem,cafile=cert.pem tcp:localhost:22
+done
+
