@@ -64,7 +64,7 @@ To finish the filtering copy VPN/knockd.conf to /etc, this will allow SSL:443 co
 ```bash
 systemctl enable knockd || echo '@reboot /usr/sbin/knockd -d' >> /var/spool/cron/crontabs/root
 ```
-Alternatively, you can copy VPN/knockd.conf.alt if you want to redirect your connection to SSL in case you already have a HTTPS server for stealth
+Alternatively, you can copy VPN/knockd.conf.alt if you want to redirect your connection to SSL in case you already have a HTTPS server (using an already generated certificate) for stealth.
 
 In order to launch the socat itself, just put VPN/ssocat.sh to (as example) /root directory and crontab it:
 ```bash
