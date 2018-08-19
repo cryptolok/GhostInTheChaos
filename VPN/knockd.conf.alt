@@ -9,7 +9,7 @@
         sequence	= 443:tcp, 80:tcp
         seq_timeout	= 1
         tcpflags	= syn
-        start_command	= /sbin/iptables -I INPUT 1 -s %IP% -p tcp --dport 443 -j ACCEPT && /sbin/iptables -t nat -I PREROUTING 1 -p tcp -s %IP% --dport 443 -j REDIRECT --to-port 4433
+        start_command	= /sbin/iptables -I INPUT 1 -s %IP% -p tcp --dport 443 -j ACCEPT && /sbin/iptables -t nat -I PREROUTING 1 -p tcp -s %IP% --dport 443 -j REDIRECT --to-port 22
         cmd_timeout	= 20
-        stop_command	= /sbin/iptables -D INPUT -s %IP% -p tcp --dport 443 -j ACCEPT && /sbin/iptables -t nat -D PREROUTING -p tcp -s %IP% --dport 443 -j REDIRECT --to-port 4433
+        stop_command	= /sbin/iptables -D INPUT -s %IP% -p tcp --dport 443 -j ACCEPT && /sbin/iptables -t nat -D PREROUTING -p tcp -s %IP% --dport 443 -j REDIRECT --to-port 22
 
