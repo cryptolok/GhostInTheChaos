@@ -49,8 +49,8 @@ then
 
 elif [[ "$1" = "stop" ]]
 then
-	ssh l$VPS "sysctl -w net.ipv4.ip_forward=0" &>/dev/null
-	ssh l$VPS "iptables -t nat -D POSTROUTING -s $NET/$MASK -o $GW -j MASQUERADE" &>/dev/null
+#	ssh l$VPS "sysctl -w net.ipv4.ip_forward=0" &>/dev/null
+#	ssh l$VPS "iptables -t nat -D POSTROUTING -s $NET/$MASK -o $GW -j MASQUERADE" &>/dev/null
 	ssh -S /var/run/ssh-vpn-tunnel-control -O exit l$VPS &>/dev/null
 	sleep 5
 	route del -host $IP
