@@ -40,7 +40,7 @@ then
 	cp /etc/resolv.conf /root/resolv.conf.bk
 	ip addr add $IPh/$MASK dev $TUNNEL
 	ip link set $TUNNEL up
-	echo "route add -host $IP gw $(ip r | grep def | cut -d ' ' -f 3) dev $(ip r | grep def | | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')" > /root/route.gw
+	echo "route add -host $IP gw $(ip r | grep def | cut -d ' ' -f 3) dev $(ip r | grep def | | cut -d ' ' -f 5)" > /root/route.gw
 	bash < /root/route.gw
 	route del default
 	route add default gw $IPr dev $TUNNEL
