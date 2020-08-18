@@ -36,14 +36,14 @@ See my [blog](https://cryptolok.blogspot.com/2018/07/ghostinthechaos-chaotic-cry
 
 (Assuming you already have SSH/VNC access to your server with root privileges)
 
-First of all, install everything that is needed:
+First of all, install everything that is needed of the same version:
 ```bash
 apt install openssh-server socat iptables-persistent knockd
 ```
 
 My SSH configuration requires specific options and plus it's hardened (except the root user, but it's just for PoC (even you can still harden it with SELinux/grsec/PAX/AppArmor/cgroups)), so copy VPN/sshd_config to /etc/ssh.
 
-Now, generate a certificate in order to couple it with socat:
+Now, generate a certificate in order to couple it with socat (both socat and openssl should be same version for client and server):
 ```bash
 openssl ecparam -out cert.key -name secp521r1 -genkey
 openssl req -new -key cert.key -x509 -nodes -days 365 -out cert.pem -sha256 -subj "/C=FR/ST=IDF/L=Paris/O=OrganizedOrganistion/OU=Org/CN=vpn.net"
